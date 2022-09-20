@@ -2,7 +2,7 @@
 
 <ClassDiagram name="testjuego">
   <ClassDiagramComponents>
-    <Class name="Bateria" package="testjuego" visibility="public" xPosition="642.0" yPosition="273.0">
+    <Class name="Bateria" package="testjuego" visibility="public" xPosition="638.0" yPosition="276.0">
       <Fields>
         <Field name="carga" type="int" visibility="private"/>
       </Fields>
@@ -19,21 +19,25 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="Hombre" package="testjuego" visibility="public" xPosition="320.0" yPosition="29.0">
+    <Class name="Hombre" package="testjuego" visibility="public" xPosition="298.0" yPosition="29.0">
       <Fields/>
-      <Constructors/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
       <Methods>
         <Method name="jugarConRobot" returnType="void" visibility="public">
           <Argument type="Robot" name="r"/>
         </Method>
       </Methods>
     </Class>
-    <Class name="Robot" package="testjuego" visibility="public" xPosition="294.0" yPosition="207.0">
+    <Class name="Robot" package="testjuego" visibility="public" xPosition="294.0" yPosition="210.0">
       <Fields>
         <Field name="bateria" type="Bateria" visibility="private"/>
         <Field name="dormido" type="boolean" visibility="private"/>
       </Fields>
-      <Constructors/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
       <Methods>
         <Method name="dormir" returnType="void" visibility="public"/>
         <Method name="despertar" returnType="void" visibility="public"/>
@@ -47,13 +51,10 @@
         <Method name="retroceder" returnType="void" visibility="public">
           <Argument type="int" name="cantPasos"/>
         </Method>
-        <Method name="verificarPasos" returnType="boolean" visibility="public">
-          <Argument type="int" name="cantPasos"/>
-        </Method>
         <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="TestJuego" package="testjuego" visibility="public" xPosition="33.0" yPosition="20.0">
+    <Class name="TestJuego" package="testjuego" visibility="public" xPosition="27.0" yPosition="143.0">
       <Fields>
         <Field name="leer" type="Scanner" visibility="public" isStatic="true"/>
       </Fields>
@@ -67,8 +68,8 @@
   </ClassDiagramComponents>
   <ClassDiagramRelations>
     <UseRelation name="" source="testjuego.TestJuego" target="testjuego.Hombre" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation name="" source="testjuego.Hombre" target="testjuego.Robot" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="has" source="testjuego.Robot" target="testjuego.Bateria" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="testjuego.Hombre" target="testjuego.Robot" sourceCardinality="1..1" targetCardinality="1..1"/>
     <UseRelation name="" source="testjuego.TestJuego" target="testjuego.Robot" sourceCardinality="1..1" targetCardinality="1..1"/>
   </ClassDiagramRelations>
 </ClassDiagram>
