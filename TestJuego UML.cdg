@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="testjuego">
+  <ClassDiagramComponents>
+    <Class name="Bateria" package="testjuego" visibility="public" xPosition="642.0" yPosition="273.0">
+      <Fields>
+        <Field name="carga" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="carga"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCarga" returnType="int" visibility="public"/>
+        <Method name="setCarga" returnType="void" visibility="public">
+          <Argument type="int" name="carga"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Hombre" package="testjuego" visibility="public" xPosition="320.0" yPosition="29.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="jugarConRobot" returnType="void" visibility="public">
+          <Argument type="Robot" name="r"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Robot" package="testjuego" visibility="public" xPosition="294.0" yPosition="207.0">
+      <Fields>
+        <Field name="bateria" type="Bateria" visibility="private"/>
+        <Field name="dormido" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="dormir" returnType="void" visibility="public"/>
+        <Method name="despertar" returnType="void" visibility="public"/>
+        <Method name="recargar" returnType="void" visibility="public"/>
+        <Method name="bateriaLlena" returnType="boolean" visibility="public"/>
+        <Method name="bateriaVacia" returnType="boolean" visibility="public"/>
+        <Method name="energiaActual" returnType="int" visibility="public"/>
+        <Method name="avanzar" returnType="void" visibility="public">
+          <Argument type="int" name="cantPasos"/>
+        </Method>
+        <Method name="retroceder" returnType="void" visibility="public">
+          <Argument type="int" name="cantPasos"/>
+        </Method>
+        <Method name="verificarPasos" returnType="boolean" visibility="public">
+          <Argument type="int" name="cantPasos"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TestJuego" package="testjuego" visibility="public" xPosition="33.0" yPosition="20.0">
+      <Fields>
+        <Field name="leer" type="Scanner" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation name="" source="testjuego.TestJuego" target="testjuego.Hombre" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="testjuego.Hombre" target="testjuego.Robot" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="has" source="testjuego.Robot" target="testjuego.Bateria" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="testjuego.TestJuego" target="testjuego.Robot" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
